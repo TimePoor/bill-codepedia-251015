@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹사이트 제작 견적서</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+            border: 2px solid #000000;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #000000;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .header .date {
+            font-size: 16px;
+            color: #666666;
+        }
+
+        .header .logo img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .total-amount {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #000000;
+            background-color: #f5f5f5;
+        }
+
+        .total-amount h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .total-amount .amount {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .section {
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #000000;
+        }
+
+        .item-list {
+            margin: 10px 0;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            flex: 1;
+        }
+
+        .item-price {
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .sub-item {
+            padding-left: 20px;
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .reference {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #000000;
+        }
+
+        .reference-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .vat-notice {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .payment-info {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #000000;
+            background-color: #f9f9f9;
+        }
+
+        .payment-info .info-item {
+            margin: 8px 0;
+        }
+
+        .payment-info .highlight {
+            font-weight: bold;
+            color: #1976d2;
+        }
+
+        .schedule {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border: 1px solid #000000;
+        }
+
+        .process {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .process-arrow {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .print-button:hover {
+            background-color: #333333;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .container {
+                border: none;
+                padding: 20px;
+            }
+
+            .print-button {
+                display: none;
+            }
+
+            .total-amount {
+                background-color: #f5f5f5;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .reference {
+                background-color: #f9f9f9;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .total-amount .amount {
+                font-size: 28px;
+            }
+
+            .print-button {
+                top: 10px;
+                right: 10px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">🖨️ 인쇄하기</button>
+
+    <div class="container">
+        <div class="header">
+            <h1>CodePedia 웹사이트 제작 견적서</h1>
+            <div class="date">작성 날짜: 2025년 10월 15일</div>
+        </div>
+
+        <div class="total-amount">
+            <h2>총 견적</h2>
+            <div class="amount">850,000원</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">웹사이트 구축 비용</div>
+            <div class="item-list">
+                <div class="item">
+                    <div class="item-name">
+                        <strong>웹사이트 구축비용</strong>
+                        <div class="sub-item">• 반응형 웹사이트 디자인 및 개발</div>
+                        <div class="sub-item">• 맞춤형 레이아웃 구성</div>
+                        <div class="sub-item">• 콘텐츠 업로드 및 최적화</div>
+                    </div>
+                    <span class="item-price">850,000원</span>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <strong>도메인 연결</strong>
+                        <div class="sub-item">• 기존 도메인 연결 설정</div>
+                        <div class="sub-item">• DNS 설정 및 SSL 인증서 적용</div>
+                    </div>
+                    <span class="item-price">0원</span>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <strong>SEO 세팅</strong>
+                        <div class="sub-item">• 메타태그 최적화</div>
+                        <div class="sub-item">• 검색엔진 크롤링 설정</div>
+                        <div class="sub-item">• sitemap.xml 및 robots.txt 생성</div>
+                    </div>
+                    <span class="item-price">0원</span>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <strong>모바일 / PC 동시지원</strong>
+                        <div class="sub-item">• 반응형 디자인 적용</div>
+                        <div class="sub-item">• 모든 디바이스 호환성 보장</div>
+                    </div>
+                    <span class="item-price">0원</span>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <strong>구글 / 네이버 등록</strong>
+                        <div class="sub-item">• Google Search Console 등록</div>
+                        <div class="sub-item">• 네이버 웹마스터 도구 등록</div>
+                    </div>
+                    <span class="item-price">0원</span>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <strong>메일서비스</strong>
+                        <div class="sub-item">• 월 200건 무료 발송</div>
+                        <div class="sub-item">• 문의 폼 연동</div>
+                    </div>
+                    <span class="item-price">0원</span>
+                </div>
+                <div class="item">
+                    <div class="item-name">
+                        <strong>호스팅비용</strong>
+                        <div class="sub-item">• 안정적인 웹 호스팅 제공</div>
+                        <div class="sub-item">• 일일 방문자 1500명</div>
+                    </div>
+                    <span class="item-price">0원</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">유지보수 (납품 종료일부터 1개월간)</div>
+            <div class="item-list">
+                <div class="item">
+                    <span class="item-name">텍스트 수정 (간단한 것)</span>
+                    <span class="item-price">무료</span>
+                </div>
+                <div class="item">
+                    <span class="item-name">텍스트 다수 교체</span>
+                    <span class="item-price">5,000원</span>
+                </div>
+                <div class="item">
+                    <span class="item-name">이미지 교체</span>
+                    <span class="item-price">5,000원</span>
+                </div>
+                <div class="item">
+                    <span class="item-name">페이지 증설</span>
+                    <span class="item-price">추후 논의</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">유지보수 (1개월 이후부터)</div>
+            <div class="item-list">
+                <div class="item">
+                    <span class="item-name">텍스트 수정 (간단한 것)</span>
+                    <span class="item-price">5,000원</span>
+                </div>
+                <div class="item">
+                    <span class="item-name">텍스트 다수 교체</span>
+                    <span class="item-price">20,000원</span>
+                </div>
+                <div class="item">
+                    <span class="item-name">이미지 교체</span>
+                    <span class="item-price">10,000원</span>
+                </div>
+                <div class="item">
+                    <span class="item-name">페이지 증설</span>
+                    <span class="item-price">추후 논의</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="reference">
+            <div class="reference-title">참고 레퍼런스</div>
+            <div>품고</div>
+        </div>
+
+        <div class="vat-notice">
+            ※ VAT 10% 별도
+        </div>
+
+        <div class="payment-info">
+            <div class="info-item">
+                <strong>입금 계좌:</strong> <span class="highlight">국민은행 952649732-51 예금주 전현우</span>
+            </div>
+            <div class="info-item">
+                <strong>결제 방식:</strong> 60% 착수금 / 40% 잔금
+            </div>
+        </div>
+
+        <div class="schedule">
+            <div class="info-item">
+                <strong>사이트 예상 제작기간:</strong> 약 14~21일
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">제작 과정</div>
+            <div class="process">
+                프로토타입 제작 
+                <span class="process-arrow">→</span> 
+                컨펌 
+                <span class="process-arrow">→</span> 
+                수정 
+                <span class="process-arrow">→</span> 
+                컨펌 
+                <span class="process-arrow">→</span> 
+                수정 
+                <span class="process-arrow">→</span> 
+                납품
+            </div>
+        </div>
+    </div>
+</body>
+</html>
